@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mini-kanban-app-bf483": {
+      "hosting": {
+        "mini-kanban-app": [
+          "mini-kanban-app-bf483"
+        ]
+      }
+    }
+  }
+}
