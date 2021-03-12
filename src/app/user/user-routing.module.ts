@@ -4,7 +4,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 
 const routes: Routes = [
   {
-    path:'/user',component:LoginPageComponent
+    path:'',component:LoginPageComponent
   }
 ];
 
