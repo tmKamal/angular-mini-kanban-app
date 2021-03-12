@@ -1,13 +1,14 @@
 <main>
-    <p>hello</p>
+    <h1>Welcome to the Mini Kanban</h1>
     <div *ngIf="!(afAuth.authState | async)">
         
-        <button mat-raised-button appGoogleSignin >SignIn</button>
+        <button mat-raised-button appGoogleSignin >Google SignIn</button>
     </div>
     <div *ngIf="afAuth.authState | async as user">
         <p>user email: {{user.email}}</p>
         <button mat-raised-button (click)="afAuth.signOut()">Logout</button>
     </div>
+    <app-email-login *ngIf="!(afAuth.authState | async)"></app-email-login>
     
 </main>
     
