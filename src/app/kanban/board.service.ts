@@ -17,14 +17,14 @@ export class BoardService {
     const userId = await this.afAuth.currentUser;
     return this.db.collection('boards').add({
       ...data,
-      uid:userId,
+      uid:userId.uid,
       tasks:[{description:'hello guys',label:'yellow'}]
 
     })
   }
 
   /* Delete board */
-  async deleteBoard(boardId:string){
+  deleteBoard(boardId:string){
     return this.db.collection('boards').doc(boardId).delete();
   }
 
@@ -37,7 +37,7 @@ export class BoardService {
   }
 
   /* Remove a specific task from the board */
-  async removeTask(boardId:string,task:Task){
+  removeTask(boardId:string,task:Task){
     return this.db.collection('boards').doc(boardId).update({
       tasks:firebase.firestore.FieldValue.arrayRemove(task)
     });
